@@ -5,16 +5,16 @@ import {
   Title,
   Content,
   Text,
+  Picker,
   Button,
   Icon,
   Left,
   Body,
-  Right,
-  List,
-  ListItem
+  Right
 } from "native-base";
 
 import styles from "./styles";
+import PickerAndroid from "../../../theme/components/Picker.android";
 class Home extends React.Component {
   render() {
     return (
@@ -34,20 +34,13 @@ class Home extends React.Component {
           </Body>
           <Right />
         </Header>
-        <Content>
-          <List>
-            {this.props.list.map((item, i) => (
-              <ListItem
-                key={i}
-                onPress={() =>
-                  this.props.navigation.navigate("BlankPage", {
-                    name: { item }
-                  })}
-              >
-                <Text>{item}</Text>
-              </ListItem>
-            ))}
-          </List>
+        <Content padder>
+          <Text>Select Disease</Text>
+          <Picker mode="dropdown">
+            <Picker.Item label="Heart Disease 1" value="hd01" />
+            <Picker.Item label="Heart Disease 2" value="hd02" />
+            <Picker.Item label="Heart Disease 3" value="hd03" />
+          </Picker>
         </Content>
       </Container>
     );
