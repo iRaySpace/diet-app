@@ -15,12 +15,7 @@ import {
 } from "native-base";
 
 import styles from "./styles";
-export interface Props {
-  navigation: any;
-  list: any;
-}
-export interface State {}
-class Home extends React.Component<Props, State> {
+class Home extends React.Component {
   render() {
     return (
       <Container style={styles.container}>
