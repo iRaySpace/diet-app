@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Text, Container, List, ListItem, Content } from "native-base";
-import { NavigationActions } from "react-navigation";
 
 const routes = [
 	{

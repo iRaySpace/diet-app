@@ -7,7 +7,8 @@ const List = types
 	})
 	.actions(self => {
 		function fetchItems(data) {
-			(self.items = data), (self.isLoading = false);
+			self.items = data;
+			self.isLoading = false;
 		}
 		return { fetchItems };
 	});
