@@ -1,0 +1,32 @@
+{
+  "d01": {
+    "disease": "Fatty Liver Disease",
+    "meat": "Red meat (Once a week)\nChicken w/out skin (4 times a week/2 serving per meat)\nEgg white (Everyday)",
+    "frvg": "Note: Limit serving size into 2 servings (Breakfast/Lunch/Dinner)",
+    "fish": "All kinds of fish allowed"
+  },
+  "d02": {
+    "disease": "Athritis",
+    "meat": "No internal organs\nNo fatty meat\nNo chicken skin\nRed meat (2 times a week)\nMore egg white",
+    "frvg": "How to prepare: steam, tinola, sinigang\nLimit fried\nNo talong, sitaw, taugi, and lentils",
+    "fish": "No:"
+  },
+  "d03": {
+    "disease": "Cardiovascular Disease",
+    "meat": "Limit red meat (2 times a week)\nMore on white meat, egg white, chicken without skin, fish with white meat",
+    "frvg": "Limit fruit (2 servings) - should be taken after meal\nMore on vegetable but limit oil",
+    "fish": "More on white meat\nLimit mackerel (3 servings per week)"
+  },
+  "d04": {
+    "disease": "Type 2 Diabetes",
+    "meat": "Tenderloin, sirloin, lean meat (40 grams - 1 serving)\nLean pork (2 times a week)\nDrumstick (note: lowest portion)",
+    "frvg": "Fresh pineapple (1 cup)\nApple fresh (1 medium size)\nPomello (3 segment - 1 serving)\nSari-sari vegetable (1 cup)\nAmpalaya with egg (1 cup)\nBanana (1 piece - 3 times a week)",
+    "fish": "Steamed Lapu-lapu with lemon (1 slice - 60 grams)\nFish Tinola with vegetables (2 slices)\nBake Kitong (1 palm size - 2 servings)"
+  },
+  "d05": {
+    "disease": "Hypertension",
+    "meat": "Lean meat sinugba (1 palm size - 2 servings)\nLean pork strips with singkamas (1 cup)\nFried lean pork (1 slice - 30 grams)\nLean beef\nChicken without skin",
+    "frvg": "Okra salad with vinegar soup\nGuso salad\nSteam vegetable (1 cup)\nGrapes (7 pieces - 1 serving)\nBanana (1 piece medium size - 1 serving)",
+    "fish": "Bangus paksiw (1 slice)\nKutob fish (steam)\nKitong (fried - 1 serving per 50 grams)"
+  }
+}

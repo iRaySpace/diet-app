@@ -36,13 +36,13 @@ class Diet extends React.Component {
               selectedValue={this.props.selectedDisease}
             >
               <Picker.Item label="Fatty Liver Disease" value="d01" />
-              <Picker.Item label="Athritis" value="rd02" />
+              <Picker.Item label="Athritis" value="d02" />
               <Picker.Item label="Cardiovascular Disease" value="d03" />
               <Picker.Item label="Type 2 Diabetes" value="d04" />
               <Picker.Item label="Hypertension" value="d05" />
             </Picker>
           </View>
-          <View>
+          <View style={{ marginBottom: 10 }}>
             <Text style={{
               color: "gray",
               fontWeight: "bold"
@@ -55,10 +55,21 @@ class Diet extends React.Component {
               onValueChange={this.props.onSelectFood}
               selectedValue={this.props.selectedFood}
             >
-              <Picker.Item label="Meat" value="f01" />
-              <Picker.Item label="Fruits and Vegetables" value="f02" />
-              <Picker.Item label="Fish" value="f03" />
+              <Picker.Item label="Meat" value="meat" />
+              <Picker.Item label="Fruits and Vegetables" value="frvg" />
+              <Picker.Item label="Fish" value="fish" />
             </Picker>
+          </View>
+          <View>
+            <Text style={{
+              color: "gray",
+              fontWeight: "bold"
+            }}>
+              Foods and Servings Suggestions
+            </Text>
+            <Text>
+              {this.props.information}
+            </Text>
           </View>
         </Content>
       </Container>
