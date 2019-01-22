@@ -7,8 +7,8 @@ const routes = [
 		caption: "Home",
 	},
 	{
-		route: "BlankPage",
-		caption: "Blank Page",
+		route: "Diet",
+		caption: "Diet",
 	},
 ];
 

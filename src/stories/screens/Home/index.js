@@ -1,11 +1,11 @@
 import * as React from "react";
+import { View } from "react-native";
 import {
   Container,
   Header,
   Title,
   Content,
   Text,
-  Picker,
   Button,
   Icon,
   Left,
@@ -14,7 +14,7 @@ import {
 } from "native-base";
 
 import styles from "./styles";
-import PickerAndroid from "../../../theme/components/Picker.android";
+
 class Home extends React.Component {
   render() {
     return (
@@ -34,13 +34,35 @@ class Home extends React.Component {
           </Body>
           <Right />
         </Header>
-        <Content padder>
-          <Text>Select Disease</Text>
-          <Picker mode="dropdown">
-            <Picker.Item label="Heart Disease 1" value="hd01" />
-            <Picker.Item label="Heart Disease 2" value="hd02" />
-            <Picker.Item label="Heart Disease 3" value="hd03" />
-          </Picker>
+        <Content
+          padder
+          contentContainerStyle={{
+            flex: 1,
+            justifyContent: "center"
+        }}>
+          <View>
+            <Text style={{
+              fontSize: 30,
+              textAlign: "center"
+            }}>
+              Welcome to
+            </Text>
+            <Text style={{
+              fontSize: 48,
+              fontWeight: "bold",
+              textAlign: "center"
+            }}>
+              KaDiet!
+            </Text>
+            <Button
+              onPress={() => this.props.navigation.navigate("Diet")}
+              style={{
+                marginTop: 15,
+                alignSelf: "center"
+            }}>
+              <Text>Check your Diet</Text>
+            </Button>
+          </View>
         </Content>
       </Container>
     );
