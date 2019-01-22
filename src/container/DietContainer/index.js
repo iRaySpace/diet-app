@@ -19,8 +19,6 @@ export default class DietContainer extends React.Component {
   }
 
   updateInformation(disease, food) {
-    console.log(disease);
-    console.log(food)
     this.setState({ information: data[disease][food] });
   }
 
