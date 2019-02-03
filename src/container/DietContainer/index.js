@@ -1,46 +1,32 @@
 import * as React from "react";
-import Diet from "../../stories/screens/Diet";
 
-import data from "./data";
+import Diet from "../../stories/screens/Diet";
 
 export default class DietContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedDisease: "d01",
-      selectedFood: "meat",
-      information: ""
+      selectedDisease: "",
+      selectedFood: ""
     };
   }
 
-  componentDidMount() {
-    const { selectedDisease, selectedFood } = this.state;
-    this.updateInformation(selectedDisease, selectedFood);
-  }
-
-  updateInformation(disease, food) {
-    this.setState({ information: data[disease][food] });
-  }
-
-  onSelectDisease(key) {
+  onPressDisease(key) {
     this.setState({ selectedDisease: key });
-    this.updateInformation(key, this.state.selectedFood);
   }
 
-  onSelectFood(key) {
+  onPressFood(key) {
     this.setState({ selectedFood: key });
-    this.updateInformation(this.state.selectedDisease, key);
   }
 
   render() {
     return (
       <Diet
-        navigation={this.props.navigation}
-        information={this.state.information}
+        navigate={this.props.navigation.navigate}
         selectedFood={this.state.selectedFood}
         selectedDisease={this.state.selectedDisease}
-        onSelectFood={key => this.onSelectFood(key)}
-        onSelectDisease={key => this.onSelectDisease(key)}
+        onPressFood={key => this.onPressFood(key)}
+        onPressDisease={key => this.onPressDisease(key)}
       />
     );
   }

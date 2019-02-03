@@ -1,6 +1,19 @@
 import * as React from "react";
-import { View } from "react-native";
-import { Container, Header, Title, Content, Text, Button, Icon, Left, Right, Body, Picker } from "native-base";
+import { View,ScrollView } from "react-native";
+import {
+  Container,
+  Header,
+  Title,
+  Content,
+  Text,
+  Button,
+  Icon,
+  Left,
+  Right,
+  Body
+} from "native-base";
+
+import DietCard from "../../../component/DietCard";
 
 class Diet extends React.Component {
   render() {
@@ -16,61 +29,96 @@ class Diet extends React.Component {
               />
             </Button>
           </Left>
-          <Body style={{ flex: 3 }}>
-            <Title>Diet</Title>
+          <Body>
+            <Title>Diet Consult</Title>
           </Body>
           <Right />
         </Header>
         <Content padder>
-          <View style={{ marginBottom: 10 }}>
+          <View style={{ marginTop: 15, marginBottom: 10 }}>
             <Text style={{
-              color: "gray",
-              fontWeight: "bold",
+              color: "#777777",
+              fontWeight: "700",
+              fontSize: 24,
+              marginBottom: 10,
+              textAlign: "center"
             }}>
-              Select Disease
+              Are you diagnosed with?
             </Text>
-            <Picker
-              note
-              mode="dropdown"
-              onValueChange={this.props.onSelectDisease}
-              selectedValue={this.props.selectedDisease}
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
             >
-              <Picker.Item label="Fatty Liver Disease" value="d01" />
-              <Picker.Item label="Athritis" value="d02" />
-              <Picker.Item label="Cardiovascular Disease" value="d03" />
-              <Picker.Item label="Type 2 Diabetes" value="d04" />
-              <Picker.Item label="Hypertension" value="d05" />
-            </Picker>
+              <DietCard
+                first
+                text="Fatty Liver Disease"
+                onPress={() => this.props.onPressDisease("d01")}
+                image={require("../../../../assets/diseases/fatty-liver.jpg")}
+              />
+              <DietCard
+                text="Arthritis"
+                onPress={() => this.props.onPressDisease("d02")}
+                image={require("../../../../assets/diseases/arthritis.jpg")}
+              />
+              <DietCard
+                text="Cardiovascular Disease"
+                onPress={() => this.props.onPressDisease("d03")}
+                image={require("../../../../assets/diseases/cardiovascular-disease.jpg")}
+              />
+              <DietCard
+                text="Type 2 Diabetes"
+                onPress={() => this.props.onPressDisease("d04")}
+                image={require("../../../../assets/diseases/type2-diabetes.jpg")}
+              />
+              <DietCard
+                text="Hypertension"
+                onPress={() => this.props.onPressDisease("d05")}
+                image={require("../../../../assets/diseases/hypertension.jpg")}
+              />
+            </ScrollView>
           </View>
-          <View style={{ marginBottom: 10 }}>
+          <View style={{ marginBottom: 30 }}>
             <Text style={{
-              color: "gray",
-              fontWeight: "bold"
+              color: "#777777",
+              fontWeight: "700",
+              fontSize: 24,
+              marginBottom: 10,
+              textAlign: "center"
             }}>
-              Select Food
+              Do you want to eat...
             </Text>
-            <Picker
-              note
-              mode="dropdown"
-              onValueChange={this.props.onSelectFood}
-              selectedValue={this.props.selectedFood}
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
             >
-              <Picker.Item label="Meat" value="meat" />
-              <Picker.Item label="Fruits and Vegetables" value="frvg" />
-              <Picker.Item label="Fish" value="fish" />
-            </Picker>
+              <DietCard
+                first
+                text="Fruits and Vegetables"
+                onPress={() => this.props.onPressFood("frvg")}
+                image={require("../../../../assets/foods/fruits-vegetables.jpg")}
+              />
+              <DietCard
+                text="Fish"
+                onPress={() => this.props.onPressFood("fish")}
+                image={require("../../../../assets/foods/fish.jpg")}
+              />
+              <DietCard
+                text="Meat"
+                onPress={() => this.props.onPressFood("meat")}
+                image={require("../../../../assets/foods/meat.jpg")}
+              />
+            </ScrollView>
           </View>
-          <View>
-            <Text style={{
-              color: "gray",
-              fontWeight: "bold"
-            }}>
-              Foods and Servings Suggestions
-            </Text>
-            <Text>
-              {this.props.information}
-            </Text>
-          </View>
+          <Button
+            block
+            disabled={(!this.props.selectedDisease || !this.props.selectedFood)}
+            onPress={() => this.props.navigate("BlankPage", {
+              food: this.props.selectedFood,
+              disease: this.props.selectedDisease
+            })}
+          >
+            <Text>Check Foods and Servings Suggestions</Text>
+          </Button>
         </Content>
       </Container>
     );
