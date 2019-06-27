@@ -17,6 +17,7 @@ import DietCard from "../../../component/DietCard";
 
 class Diet extends React.Component {
   render() {
+    const { selectedDisease, selectedFood } = this.props;
     return (
       <Container style={{ backgroundColor: "#3C54D4" }}>
         <Content padder>
@@ -36,26 +37,31 @@ class Diet extends React.Component {
               <DietCard
                 first
                 text="Fatty Liver Disease"
+                highlight={selectedDisease === "d01"}
                 onPress={() => this.props.onPressDisease("d01")}
                 image={require("../../../../assets/diseases/fatty-liver.jpg")}
               />
               <DietCard
                 text="Arthritis"
+                highlight={selectedDisease === "d02"}
                 onPress={() => this.props.onPressDisease("d02")}
                 image={require("../../../../assets/diseases/arthritis.jpg")}
               />
               <DietCard
                 text="Cardiovascular Disease"
+                highlight={selectedDisease === "d03"}
                 onPress={() => this.props.onPressDisease("d03")}
                 image={require("../../../../assets/diseases/cardiovascular-disease.jpg")}
               />
               <DietCard
                 text="Type 2 Diabetes"
+                highlight={selectedDisease === "d04"}
                 onPress={() => this.props.onPressDisease("d04")}
                 image={require("../../../../assets/diseases/type2-diabetes.jpg")}
               />
               <DietCard
                 text="Hypertension"
+                highlight={selectedDisease === "d05"}
                 onPress={() => this.props.onPressDisease("d05")}
                 image={require("../../../../assets/diseases/hypertension.jpg")}
               />
@@ -77,16 +83,19 @@ class Diet extends React.Component {
               <DietCard
                 first
                 text="Fruits"
+                highlight={selectedFood === "frvg"}
                 onPress={() => this.props.onPressFood("frvg")}
                 image={require("../../../../assets/foods/fruits-vegetables.jpg")}
               />
               <DietCard
                 text="Fish"
+                highlight={selectedFood === "fish"}
                 onPress={() => this.props.onPressFood("fish")}
                 image={require("../../../../assets/foods/fish.jpg")}
               />
               <DietCard
                 text="Meat"
+                highlight={selectedFood === "meat"}
                 onPress={() => this.props.onPressFood("meat")}
                 image={require("../../../../assets/foods/meat.jpg")}
               />

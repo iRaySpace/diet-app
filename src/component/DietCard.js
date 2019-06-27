@@ -8,7 +8,10 @@ import {
 
 const DietCard = (props) => (
   <TouchableOpacity onPress={props.onPress} >
-    <Card style={{ width: 200, marginLeft: props.first ? 0 : 10 }}>
+    <Card style={{
+      width: 200,
+      marginLeft: props.first ? 0 : 10
+    }}>
       <CardItem cardBody>
         <Image
           style={{ flex: 1 }}
@@ -18,7 +21,8 @@ const DietCard = (props) => (
       <CardItem style={{
         flex: 1,
         borderTopWidth: 1,
-        borderColor: "#efefef"
+        borderColor: "#efefef",
+        backgroundColor: props.highlight ? "#F5A91B" : "white",
       }}>
         <Text style={{
           flex: 1,
