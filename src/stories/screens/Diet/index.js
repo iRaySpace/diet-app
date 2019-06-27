@@ -18,27 +18,11 @@ import DietCard from "../../../component/DietCard";
 class Diet extends React.Component {
   render() {
     return (
-      <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon
-                active
-                name="menu"
-                onPress={() => this.props.navigation.navigate("DrawerOpen")}
-              />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Diet Consult</Title>
-          </Body>
-          <Right />
-        </Header>
+      <Container style={{ backgroundColor: "#3C54D4" }}>
         <Content padder>
           <View style={{ marginTop: 15, marginBottom: 10 }}>
             <Text style={{
-              color: "#777777",
-              fontWeight: "700",
+              color: "white",
               fontSize: 24,
               marginBottom: 10,
               textAlign: "center"
@@ -79,13 +63,12 @@ class Diet extends React.Component {
           </View>
           <View style={{ marginBottom: 30 }}>
             <Text style={{
-              color: "#777777",
-              fontWeight: "700",
+              color: "white",
               fontSize: 24,
               marginBottom: 10,
               textAlign: "center"
             }}>
-              Do you want to eat...
+              Do you want to eat?
             </Text>
             <ScrollView
               horizontal={true}
@@ -93,7 +76,7 @@ class Diet extends React.Component {
             >
               <DietCard
                 first
-                text="Fruits and Vegetables"
+                text="Fruits"
                 onPress={() => this.props.onPressFood("frvg")}
                 image={require("../../../../assets/foods/fruits-vegetables.jpg")}
               />
@@ -111,13 +94,15 @@ class Diet extends React.Component {
           </View>
           <Button
             block
+            rounded
+            style={{ backgroundColor: "#F5A91B" }}
             disabled={(!this.props.selectedDisease || !this.props.selectedFood)}
             onPress={() => this.props.navigate("BlankPage", {
               food: this.props.selectedFood,
               disease: this.props.selectedDisease
             })}
           >
-            <Text>Check Foods and Servings Suggestions</Text>
+            <Text>Check Recommendations</Text>
           </Button>
         </Content>
       </Container>

@@ -22,6 +22,16 @@ class BlankPage extends React.Component {
 				</Header>
 
 				<Content padder>
+					<Text style={{
+						fontSize: 24,
+						color: "#3C54D4",
+						fontWeight: "bold",
+					}}>
+						{this.props.disease} > {this.props.food}
+					</Text>
+					<Text style={{ color: "#777" }}>
+						Foods/Servings Suggestions
+					</Text>
 					<Text>{this.props.information}</Text>
 				</Content>
 			</Container>
