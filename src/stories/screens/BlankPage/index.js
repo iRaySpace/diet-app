@@ -1,8 +1,9 @@
 import * as React from "react";
 import { ImageBackground } from "react-native";
-import { Container, Header, Title, Content, Text, Button, Icon, Left, Right, Body, Image } from "native-base";
+import { Container, Header, Content, Text, Button, Icon, Left, Right, Body } from "native-base";
 
 import styles from "./styles";
+import Suggestion from "./components/Suggestion";
 
 class BlankPage extends React.Component {
 	render() {
@@ -37,6 +38,19 @@ class BlankPage extends React.Component {
 						Foods/Servings Suggestions
 					</Text>
 					<Text>{this.props.information}</Text>
+					<Text style={{
+						fontSize: 18,
+						fontWeight: "bold",
+						color: "#777",
+						marginTop: 15,
+						marginBottom: 10
+					}}>
+						Suggestions
+					</Text>
+					<Suggestion
+						food={this.props.food}
+						disease={this.props.disease}
+					/>
 				</Content>
 			</Container>
 		);

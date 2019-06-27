@@ -2,15 +2,9 @@ import * as React from "react";
 import { View,ScrollView } from "react-native";
 import {
   Container,
-  Header,
-  Title,
   Content,
   Text,
   Button,
-  Icon,
-  Left,
-  Right,
-  Body
 } from "native-base";
 
 import DietCard from "../../../component/DietCard";
